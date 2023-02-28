@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'imobiliariaSA.apps.ImobiliariasaConfig',
     'nested_inline',
     'rest_framework',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,3 +141,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
 }
+
+#CSRF_COOKIE_SECURE = False

@@ -26,9 +26,12 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'imoveis', views.ImoveisViewSet)
+router.register(r'categorias', views.CategoriasViewSet)
+router.register(r'tiposImoveis', views.TipoImovelViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('admin/', admin.site.urls), #Quando acessar /admin/ pega as urls do admin.py
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),#Quando acessar /api-auth/ pega as urls do rest-framenwork
     re_path(r'^', include(router.urls)),
+    re_path('login/', views.login),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

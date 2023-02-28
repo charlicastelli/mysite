@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
 
-
+# Cria tabela Categoria banco de dados
+# contém os campos e comportamentos essenciais
 class Categoria(models.Model):
     id = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=50, help_text="Nome da categoria")
@@ -16,6 +17,8 @@ class Categoria(models.Model):
         db_table = 'tab_categoria'
         verbose_name_plural=u"Categorias"
 
+# Cria tabela Tipo imovel banco de dados
+# contém os campos e comportamentos essenciais
 class TipoImovel(models.Model):
     id = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=50, help_text="Nome.")
@@ -29,6 +32,8 @@ class TipoImovel(models.Model):
         db_table = 'tab_tipoImovel'
         verbose_name_plural=u'Tipos de imóveis'
 
+# Cria tabela imovel banco de dados
+# contém os campos e comportamentos essenciais
 class Imovel(models.Model):
     id = models.AutoField(primary_key=True)
     tipoImovel = models.ForeignKey(TipoImovel, on_delete=models.CASCADE, blank=False)
@@ -48,6 +53,8 @@ class Imovel(models.Model):
         db_table = 'tab_imovel'
         verbose_name_plural=u"Imóveis"
 
+# Cria tabela fotos banco de dados
+# contém os campos e comportamentos essenciais
 class Fotos(models.Model):
     id = models.AutoField(primary_key=True)
     imovel = models.ForeignKey(Imovel, on_delete=models.CASCADE)
@@ -63,7 +70,8 @@ class Fotos(models.Model):
         verbose_name_plural=u'Fotos dos imóveis'
 
 
-
+# Cria tabela pessoas banco de dados
+# contém os campos e comportamentos essenciais
 class Pessoa(models.Model):
 
     SEXO_OPCOES = (
