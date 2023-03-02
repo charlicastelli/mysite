@@ -1,6 +1,9 @@
 # Projeto criado para aprendizado
 - Aulas assistidas no YouTube https://www.youtube.com/@rodrigofonsecajr/featured
 
+## front-end em desenvolvimento
+- https://github.com/charlicastelli/imobiliaria-angular
+
 ## Executar instalação de tudo o que tiver no requirements.txt
 - Executar o comando abaixo somente após estiver ativo o `env`.
 - `pip install -r requirements.txt`.
